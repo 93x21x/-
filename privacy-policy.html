@@ -61,6 +61,19 @@
         a:hover {
             text-decoration: underline;
         }
+        .notice-box {
+            background-color: #EBF5FF;
+            border: 1px solid #4A90E2;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-bottom: 20px;
+        }
+        .notice-box p {
+            margin: 0;
+            color: #1a5276;
+            font-weight: 600;
+            font-size: 14.5px;
+        }
         .footer {
             margin-top: 60px;
             border-top: 1px solid #e0e0e0;
@@ -75,41 +88,54 @@
 
     <div class="header-container">
         <h1>개인정보처리방침</h1>
-        <p class="update-date"><strong>교대근무 케어</strong> | 최종 업데이트: 2026년 5월</p>
+        <p class="update-date"><strong>교대근무 케어</strong> | 최종 업데이트: 2026년 5월 21일</p>
+    </div>
+
+    <div class="notice-box">
+        <p>🔒 교대근무 케어 앱은 건강 데이터, 연락처, 사진첩에 접근하지만, 모든 데이터는 기기 내에서만 사용되며 외부 서버로 절대 유출되지 않습니다.</p>
     </div>
 
     <h2>서비스 소개</h2>
-    <p>교대근무 케어(이하 "앱")는 3교대 근무자를 위한 근무 일정 관리, 투두 리스트, 알람, 생체 시간 정보를 제공하는 앱입니다.</p>
+    <p>교대근무 케어(이하 "앱")는 3교대 근무자를 위한 근무 일정 관리, 피로도 분석, 식단 관리, 친구 일정 매칭 서비스를 제공하는 앱입니다.</p>
     <p>본 앱은 개인 개발자가 운영하며, 이용자의 개인정보를 소중히 여기고 관련 법령을 준수합니다.</p>
 
     <h2>수집하는 개인정보</h2>
-    <p>앱은 서비스 제공을 위해 다음 정보를 수집합니다:</p>
+    <p>앱은 서비스 제공을 위해 다음 최소한의 정보만 수집합니다:</p>
     <ul>
-        <li><strong>회원가입 시:</strong> 이메일 주소, 비밀번호 (암호화 저장)</li>
-        <li><strong>서비스 이용 시:</strong> 근무 일정, 투두 리스트, 알람 설정</li>
-        <li><strong>자동 수집:</strong> 앱 사용 통계, 오류 로그 (개인 식별 불가)</li>
+        <li><strong>회원가입 시:</strong> 이메일 주소, 비밀번호 (Firebase 암호화 저장)</li>
+        <li><strong>서비스 이용 시:</strong> 근무 일정, 할 일 목록, 알람 설정, 식단 기록, 건강 지표(체중·혈압·혈당), 친구 코드</li>
+        <li><strong>Apple HealthKit (선택):</strong> 수면 시간, 걸음수, 심박수, 운동 시간 — 사용자 동의 시에만 읽기, 기기 내에서만 처리</li>
+        <li><strong>연락처 (선택):</strong> 친구 초대 목적으로만 사용, 서버에 저장되지 않으며 기기 내에서만 사용</li>
+        <li><strong>사진첩/카메라 (선택):</strong> 근무표 사진 인식 목적으로만 사용, 서버에 저장되지 않으며 기기 내에서만 처리</li>
     </ul>
+    <p>※ 이름, 전화번호, 위치정보는 수집하지 않습니다. 광고 서비스(AdMob 등)는 사용하지 않습니다.</p>
 
     <h2>개인정보 이용 목적</h2>
     <ul>
         <li>회원 가입 및 로그인 서비스 제공</li>
-        <li>근무 일정, 투두, 알람 데이터 저장 및 동기화</li>
+        <li>근무 일정, 할 일, 알람, 식단 데이터 클라우드 저장 및 기기 간 동기화</li>
+        <li>피로도 분석 및 건강 관리 기능 제공</li>
+        <li>친구 코드 기반 일정 매칭 서비스</li>
         <li>서비스 개선 및 오류 수정</li>
     </ul>
 
     <h2>개인정보 보관 및 파기</h2>
-    <p>회원 탈퇴 시 모든 개인정보는 즉시 삭제됩니다. 단, 관련 법령에 따라 일정 기간 보관이 필요한 정보는 해당 기간 동안 보관 후 파기합니다.</p>
+    <p>회원 탈퇴 시 이메일, 근무 일정, 식단 기록, 친구 목록 등 모든 개인정보가 즉시 삭제됩니다.</p>
+    <p>Apple HealthKit 데이터, 연락처, 사진첩 데이터는 기기 내에서만 읽으며 서버에 저장하지 않습니다.</p>
 
     <h2>제3자 서비스</h2>
     <p>앱은 서비스 안정성 및 인프라 제공을 위해 다음 제3자 서비스를 사용합니다:</p>
     <ul>
-        <li><strong>Firebase (Google):</strong> 로그인 및 데이터 저장 — <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">개인정보처리방침</a></li>
+        <li><strong>Firebase Authentication (Google):</strong> 로그인 및 계정 관리 — <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">개인정보처리방침</a></li>
+        <li><strong>Firebase Firestore (Google):</strong> 앱 데이터 클라우드 저장 — <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">개인정보처리방침</a></li>
     </ul>
 
     <h2>이용자의 권리</h2>
     <ul>
-        <li>개인정보 열람, 수정, 삭제 요청 가능</li>
-        <li>앱 내 설정에서 계정 탈퇴 가능</li>
+        <li>앱 내 설정에서 계정 탈퇴 및 모든 데이터 즉시 삭제 가능</li>
+        <li>Apple HealthKit 권한은 기기 설정 → 건강 → 앱에서 언제든 변경 가능</li>
+        <li>연락처 권한은 기기 설정 → 개인 정보 보호에서 언제든 변경 가능</li>
+        <li>사진첩/카메라 권한은 기기 설정 → 개인 정보 보호에서 언제든 변경 가능</li>
     </ul>
 
     <h2>어린이 개인정보 보호</h2>
